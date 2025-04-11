@@ -77,7 +77,7 @@ let decodeDeltaMode = x =>
   | 0 => Pixel
   | 1 => Line
   | 2 => Page
-  | _ => raise(Invalid_argument("invalid deltaMode"))
+  | _ => throw(Invalid_argument("invalid deltaMode"))
   }
 
 type designMode =
@@ -275,7 +275,7 @@ let decodeShadowRootMode = x =>
   switch x {
   | "open" => Open
   | "closed" => Closed
-  | _ => raise(Invalid_argument("Unknown shadowRootMode"))
+  | _ => throw(Invalid_argument("Unknown shadowRootMode"))
   }
 
 type visibilityState =
@@ -337,6 +337,6 @@ module WhatToShow: WhatToShowT = {
   let rec many = x =>
     switch x {
     | list{} => 0
-    | list{hd, ...rest} => lor(hd, many(rest))
+    | list{hd, ...rest} => Int.bitwiseOr(hd, many(rest))
     }
 }

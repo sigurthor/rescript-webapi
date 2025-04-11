@@ -102,7 +102,7 @@ let decodeReferrerPolicy = x =>
   | "origin-when-cross-origin" => OriginWhenCrossOrigin
   | "strict-origin-when-cross-origin" => StrictOriginWhenCrossOrigin
   | "unsafe-url" => UnsafeUrl
-  | e => raise(Failure("Unknown referrerPolicy: " ++ e))
+  | e => throw(Failure("Unknown referrerPolicy: " ++ e))
   }
 
 type requestDestination =
@@ -140,7 +140,7 @@ let decodeRequestDestination = x =>
   | "style" => Style
   | "worker" => Worker
   | "xslt" => Xslt
-  | e => raise(Failure("Unknown requestDestination: " ++ e))
+  | e => throw(Failure("Unknown requestDestination: " ++ e))
   }
 
 type requestMode =
@@ -165,7 +165,7 @@ let decodeRequestMode = x =>
   | "same-origin" => SameOrigin
   | "no-cors" => NoCORS
   | "cors" => CORS
-  | e => raise(Failure("Unknown requestMode: " ++ e))
+  | e => throw(Failure("Unknown requestMode: " ++ e))
   }
 
 type requestCredentials =
@@ -187,7 +187,7 @@ let decodeRequestCredentials = x =>
   | "omit" => Omit
   | "same-origin" => SameOrigin
   | "include" => Include
-  | e => raise(Failure("Unknown requestCredentials: " ++ e))
+  | e => throw(Failure("Unknown requestCredentials: " ++ e))
   }
 
 type requestCache =
@@ -218,7 +218,7 @@ let decodeRequestCache = x =>
   | "no-cache" => NoCache
   | "force-cache" => ForceCache
   | "only-if-cached" => OnlyIfCached
-  | e => raise(Failure("Unknown requestCache: " ++ e))
+  | e => throw(Failure("Unknown requestCache: " ++ e))
   }
 
 type requestRedirect =
@@ -240,7 +240,7 @@ let decodeRequestRedirect = x =>
   | "follow" => Follow
   | "error" => Error
   | "manual" => Manual
-  | e => raise(Failure("Unknown requestRedirect: " ++ e))
+  | e => throw(Failure("Unknown requestRedirect: " ++ e))
   }
 
 module HeadersInit = {

@@ -6,7 +6,7 @@ open Belt.Option
 let unwrapUnsafely = x =>
   switch x {
   | Some(v) => v
-  | None => raise(Invalid_argument("Passed `None` to unwrapUnsafely"))
+  | None => throw(Invalid_argument("Passed `None` to unwrapUnsafely"))
   }
 
 /*

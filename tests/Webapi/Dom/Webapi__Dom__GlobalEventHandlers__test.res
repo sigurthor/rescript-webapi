@@ -1,6 +1,6 @@
 open Webapi.Dom
 
-let handleSelection = _ => print_endline("change")
+let handleSelection = _ => Js.log("change")
 
 let elm = document->Document.createElement("strong")
 

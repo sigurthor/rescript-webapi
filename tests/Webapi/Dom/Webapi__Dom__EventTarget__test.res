@@ -4,7 +4,7 @@ open EventTarget
 let target: Dom.eventTarget = document->Document.createElement("strong")->Element.asEventTarget
 let event: Event.t = Event.make("my-event")
 
-let handleClick = _ => print_endline("asd")
+let handleClick = _ => Js.log("asd")
 
 target->addEventListener("click", handleClick)
 target->addEventListenerWithOptions(

@@ -1,4 +1,3 @@
-open Js.TypedArray2
 
 type readyState
 type t<'binaryType> = private {
@@ -10,8 +9,8 @@ type t<'binaryType> = private {
   url: string,
 }
 @new external make: string => t<Webapi__Blob.t> = "WebSocket"
-@new external makeArrayBuffer: string => t<array_buffer> = "WebSocket"
-@set external setArrayBuffer: (t<array_buffer>, @as("arraybuffer") _) => unit = "binaryType"
+@new external makeArrayBuffer: string => t<Js.TypedArray2.array_buffer> = "WebSocket"
+@set external setArrayBuffer: (t<Js.TypedArray2.array_buffer>, @as("arraybuffer") _) => unit = "binaryType"
 let makeArrayBuffer = url => {
   let ws = makeArrayBuffer(url)
   ws->setArrayBuffer
@@ -77,7 +76,7 @@ external removeMessageListener: (
 
 @send external sendText: (t<'binaryType>, string) => unit = "send"
 @send external sendBlob: (t<'binaryType>, Webapi__Blob.t) => unit = "send"
-@send external sendArrayBuffer: (t<'binaryType>, array_buffer) => unit = "send"
+@send external sendArrayBuffer: (t<'binaryType>, Js.TypedArray2.array_buffer) => unit = "send"
 @send external sendInt8Array: (t<'binaryType>, Int8Array.t) => unit = "send"
 @send external sendInt16Array: (t<'binaryType>, Int16Array.t) => unit = "send"
 @send external sendInt32Array: (t<'binaryType>, Int32Array.t) => unit = "send"

@@ -17,18 +17,19 @@ __metadata:
   resolution: "rescript-webapi@workspace:."
   dependencies:
     "@ryyppy/rescript-promise": "npm:^2.1.0"
-    rescript: "npm:^10.1.4"
+    rescript: "npm:^12.0.0-alpha.11"
   languageName: unknown
   linkType: soft
 
-"rescript@npm:^10.1.4":
-  version: 10.1.4
-  resolution: "rescript@npm:10.1.4"
+"rescript@npm:^12.0.0-alpha.11":
+  version: 12.0.0-alpha.11
+  resolution: "rescript@npm:12.0.0-alpha.11"
   bin:
-    bsc: bsc
-    bsrefmt: bsrefmt
-    bstracing: lib/bstracing
-    rescript: rescript
-  checksum: 10c0/2549750314c865beed52f3fe828ca653386c784e053e640e011ef8165594757702abfe080f4ead5b0c95c3f577b1dd98a3df937e8e5256d69bc6bb13c8e31124
+    bsc: cli/bsc.js
+    bstracing: lib/bstracing.js
+    rescript: cli/rescript.js
+    rescript-tools: cli/rescript-tools.js
+    rewatch: cli/rewatch.js
+  checksum: 10c0/013a2185bcce2c7322a23868fa9798f064c2dde260ac9bc699cc017abaed9f8bb3cced92bccdf015d6301d53f93b23797842e59f6535d757d35afd606bf5fa4f
   languageName: node
   linkType: hard

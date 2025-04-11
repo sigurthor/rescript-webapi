@@ -1,4 +1,4 @@
-open Webapi.Dom
+open Webapi.Dom 
 open Document
 
 let el: Dom.element = document->createElement("strong")

@@ -4,13 +4,13 @@ open Promise
 let _ = {
   Fetch.fetch("/api/hellos/1")
   ->then(Fetch.Response.text)
-  ->then(text => print_endline(text)->resolve)
+  ->then(text => Js.log(text)->resolve)
 }
 
 let _ = {
   Fetch.fetchWithInit("/api/hello", Fetch.RequestInit.make(~method_=Post, ()))
   ->then(Fetch.Response.text)
-  ->then(text => print_endline(text)->resolve)
+  ->then(text => Js.log(text)->resolve)
 }
 
 let _ = {

@@ -17,10 +17,9 @@
     }
   ],
   "warnings": {
-    "number": "+A",
-    "error": "+A"
+    "number": "-a",
+    "error": "-a"
   },
   "bs-dev-dependencies": [
-    "@ryyppy/rescript-promise"
   ]
 }

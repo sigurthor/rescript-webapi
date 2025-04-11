@@ -3,7 +3,7 @@ open Webapi.Dom
 let el = document->Document.createElement("strong")
 let htmlEl = el->Element.unsafeAsHtmlElement
 let event = document->Document.createEvent("my-event")
-let handleClick = _ => print_endline("asd")
+let handleClick = _ => Js.log("asd")
 
 let _ = Window.console(window)
 let _ = Window.crypto(window)
@@ -76,4 +76,4 @@ let _ = window->Window.scrollBy(10.0, -10.0)
 let _ = window->Window.scrollTo(120.5, 300.3)
 let _ = window->Window.scrollToWithOptions({ "left": 1.0, "top": 1.0, "behavior": "smooth"})
 Window.stop(window)
-Window.setOnLoad(window, () => print_endline("load"))
+Window.setOnLoad(window, () => Js.log("load"))
